@@ -1,34 +1,54 @@
-<!doctype html>
-<html>
-    <head>
-        <title>harviacode.com - codeigniter crud generator</title>
-        <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
-        <style>
-            body{
-                padding: 15px;
-            }
-        </style>
-    </head>
-    <body>
-        <h2 style="margin-top:0px">Departement List</h2>
+        <div class="content">
+                    <!-- Top Bar Start -->
+                    
+                    <!-- Top Bar End -->
+
+                    <div class="page-content-wrapper ">
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="page-title-box">
+                                        <div class="btn-group float-right">
+                                            <ol class="breadcrumb hide-phone p-0 m-0">
+                                                <li class="breadcrumb-item"><a href=".">Admin</a></li>
+                                                <li class="breadcrumb-item"><a href="#">Departement</a></li>
+                                               <!--  <li class="breadcrumb-item active">Form Validation</li> -->
+                                            </ol>
+                                        </div>
+                                        <h4 class="page-title">Departement</h4>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        <!-- end page title end breadcrumb -->
+                            <div class="row">
+                            <div class="col-md-12 col-xl-12">
+                                <div class="card m-b-30">
+                                    <div class="card-body">
+                                        <div class="general-label">
+
+
+        <h2 style="margin-top:0px">Liste des departements</h2>
+
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
                 <?php echo anchor(site_url('departement/create'),'Create', 'class="btn btn-primary"'); ?>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-3 text-center">
                 <div style="margin-top: 8px" id="message">
                     <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
                 </div>
             </div>
-            <div class="col-md-1 text-right">
-            </div>
-            <div class="col-md-3 text-right">
+            <!-- <div class="col-md-1 text-right">
+            </div> -->
+            <div class="col-md-4 text-right">
                 <form action="<?php echo site_url('departement/index'); ?>" class="form-inline" method="get">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
+                        <input type="text" class="form-control" name="q" value="<?php echo $data['q']; ?>">
                         <span class="input-group-btn">
                             <?php 
-                                if ($q <> '')
+                                if ($data['q'] <> '')
                                 {
                                     ?>
                                     <a href="<?php echo site_url('departement'); ?>" class="btn btn-default">Reset</a>
@@ -41,6 +61,7 @@
                 </form>
             </div>
         </div>
+
         <table class="table table-bordered" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
@@ -48,11 +69,11 @@
 		<th>AdresseDepartement</th>
 		<th>Action</th>
             </tr><?php
-            foreach ($departement_data as $departement)
+            foreach ($data['departement_data'] as $departement)
             {
                 ?>
                 <tr>
-			<td width="80px"><?php echo ++$start ?></td>
+			<td width="80px"><?php echo ++$data['start'] ?></td>
 			<td><?php echo $departement->nomDepartement ?></td>
 			<td><?php echo $departement->adresseDepartement ?></td>
 			<td style="text-align:center" width="200px">
@@ -71,11 +92,20 @@
         </table>
         <div class="row">
             <div class="col-md-6">
-                <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
+                <a href="#" class="btn btn-primary">Total Record : <?php echo $data['total_rows'] ?></a>
 	    </div>
             <div class="col-md-6 text-right">
-                <?php echo $pagination ?>
+                <?php echo $data['pagination'] ?>
             </div>
         </div>
-    </body>
-</html>
+        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div>
+                        </div><!-- container -->
+
+                    </div> <!-- Page content Wrapper -->
+
+                </div> <!-- content -->

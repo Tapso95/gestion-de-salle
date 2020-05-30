@@ -20,6 +20,12 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$home_template['page'] = "welcome_message";
+			/*$home_template['courses'] =$this->Welcome_Model->get_all_course();
+			$home_template['notvalide_courses'] = $this->Welcome_Model->get_notvalide_course();
+			$home_template['ecues'] =$this->Welcome_Model->get_all_ecue();
+			*/
+			$this->load->view('home_template', $home_template);
+		//$this->load->view('welcome_message');
 	}
 }
