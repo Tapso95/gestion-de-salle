@@ -23,22 +23,30 @@ class Login extends CI_Controller {
 	function check_database($password) {
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
-		$result = $this->Login_model->Role_login($email, md5($password));
+		$result = $this->Login_model->Role_login($email);
+		//var_dump($result);
 			if ($result){
-				$sess_array = array();
-				$sess_array = array(
-					'id' => $result->id,
-					'username' => $result->prenom,				
-					'email' => $result->email,
-				);
-
-				$this->session->set_userdata('super_person', $result->super_person);
-				$this->session->set_userdata('sub_person', $result->sub_person);
-				$this->session->set_userdata('logged_user', $sess_array);
-				return TRUE;
+				//var_dump($result->password);
+				//password_hash($hash_input_password, PASSWORD_BCRYPT);
+				echo password_verify($password, $result->password);
+				if (password_verify($password, $result->password)) {
+					$sess_array = array();
+					$sess_array = array(
+						'id' => $result->id,
+						'username' => $result->prenom,				
+						'email' => $result->email,
+					);
+					$this->session->set_userdata('super_person', $result->super_person);
+					$this->session->set_userdata('sub_person', $result->sub_person);
+					$this->session->set_userdata('logged_user', $sess_array);
+					return TRUE;
+				} else {
+					$this->form_validation->set_message('check_database', 'Email ou mot de passe incorrect');
+					return false;
+				}
 			}
 			else{
-				$this->form_validation->set_message('check_database', 'Email ou Mot de passe incorrect');
+				$this->form_validation->set_message('check_database', 'Email ou mot de passe incorrect');
 				return false;
 			}
 	}

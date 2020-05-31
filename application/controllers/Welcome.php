@@ -9,9 +9,9 @@ class Welcome extends CI_Controller {
 		$this->load->helper('url','form');	
 		$this->load->model('Welcome_Model');
 
-		// if(!$this->session->userdata('logged_user')) { 
-		// 	redirect(base_url());
-		//  }
+		if(!$this->session->userdata('logged_user')) { 
+			redirect(base_url()."login");
+		 }
  	}
 
 	/* === Dashboard Redirection === */
@@ -76,17 +76,17 @@ class Welcome extends CI_Controller {
             $data = array(
 		'idEcue' => $this->input->post('nom_ecue',TRUE),
 		'idTypeCours' => $this->input->post('type_cours',TRUE),
-		'idSalle' => $this->input->post('id_salle',TRUE),
+		//'idSalle' => $this->input->post('id_salle',TRUE),
 		'dateCours' => $this->input->post('date_cours',TRUE),
 		'heureDebutCours' => $this->input->post('heure_debut_cours',TRUE),
 		'heureFinCours' => $this->input->post('heure_fin_cours',TRUE),
 	     );
             if($this->session->userdata('sub_person') == 2){
             	$data['acceptedCours'] = 1;
-            	$data['enabledCours'] = 1;
+            	$data['enabledCours'] = 0;
             }else{
             	$data['acceptedCours'] = 0;
-            	$data['enabledCours'] = 1;
+            	$data['enabledCours'] = 0;
 
             }
 

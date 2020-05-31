@@ -3,8 +3,8 @@ class Login_model extends CI_Model{
 	public function _construct(){
 		parent::_construct();
 	}
-	public function Role_login($email, $password){	   
-		$this->db->select('idEtudiant as id, prenomEtudiant as prenom, emailEtudiant as email, passwordEtudiant, nomEtudiant as nom');
+	public function Role_login($email){	   
+		$this->db->select('idEtudiant as id, prenomEtudiant as prenom, emailEtudiant as email, passwordEtudiant as password, nomEtudiant as nom');
 		$this->db->from('Etudiant');
 		$this->db->where('emailEtudiant', $email);
 		//$this->db->where('statutEtudiant', 1);
@@ -16,7 +16,7 @@ class Login_model extends CI_Model{
 			$result->sub_person = 0;
 			return $result;
 		}else{
-			$this->db->select('Enseignant.idEnseignant as id, Enseignant.prenomEnseignant as prenom, Enseignant.emailEnseignant as email, Enseignant.passwordEnseignant, Enseignant.nomEnseignant as nom, Enseignant.idPoste as poste');
+			$this->db->select('Enseignant.idEnseignant as id, Enseignant.prenomEnseignant as prenom, Enseignant.emailEnseignant as email, Enseignant.passwordEnseignant as password, Enseignant.nomEnseignant as nom, Enseignant.idPoste as poste');
 			$this->db->from('Enseignant');
 			//$this->db->join('Poste', 'FIND_IN_SET(Poste.idPoste, Enseignant.idPoste) > 0', 'left ');
 			$this->db->where('emailEnseignant', $email);

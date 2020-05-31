@@ -52,7 +52,6 @@
                                                                                 <th>Type de cours</th>
                                                                                 <th>Date</th>
                                                                                 <th>Heure</th>
-                                                                                <th>Action</th>
                                                                             </tr>
                                                                             </thead>
                             
@@ -64,7 +63,6 @@
                                                                                 <td> <?php echo $course->nomTypeCours ?></td>
                                                                                 <td> <?php echo $course->dateCours ?></td>
                                                                                 <td> <?php echo $course->heureDebutCours." à ".$course->heureFinCours ?></td>
-                                                                                <td></td>
                                                                             </tr>
                                                                             <?php } ?>
                                                                             </tbody>
@@ -103,7 +101,10 @@
                                                                                 <td> <?php echo $notvalide_course->nomTypeCours ?></td>
                                                                                 <td> <?php echo $notvalide_course->dateCours ?></td>
                                                                                 <td> <?php echo $notvalide_course->heureDebutCours." à ".$notvalide_course->heureFinCours  ?></td>
-                                                                                <td><?php echo anchor(site_url('cours/read/'.$notvalide_course->idCours),'Valider'); ?></td>
+                                                                                <td>
+                                                                                <a class="btn btn-success" href="<?php echo base_url().'assistant/validate_course/'.$notvalide_course->idCours ?>">Valider</a>
+                                                                                <a class="btn btn-warning" href="<?php echo base_url().'assistant/cancel_notval_course/'.$notvalide_course->idCours ?>">Valider</a>
+                                                                                </td>
                                                                             </tr>
                                                                             <?php } ?>
                                                                             </tbody>
@@ -129,11 +130,11 @@
                                                                                 <option  disabled  selected >Select </option>
                                                                                 <?php foreach($ecues as $ecue): ?>
                                                                                 <option  value="<?php echo $ecue->idEcue; ?>" <?php echo  set_select('ecue', $ecue->idEcue); ?> ><?php echo $ecue->nomEcue; ?></option>
-                                                                                <?php endforeach; ?>
+                                                                                <?php endforeach;  ?>
                                                                             </select>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="form-row">
+                                                                        <!-- <div class="form-row">
                                                                             <div class="col-md-6 mb-3">
                                                                             <h6 class="text-muted">Salle</h6>
                                                                             <select class="select2 form-control mb-3 custom-select" name="id_salle"  required=""  style="width: 100%; height:36px;">
@@ -143,7 +144,7 @@
                                                                                 <?php endforeach; ?>
                                                                             </select>
                                                                             </div>
-                                                                        </div>
+                                                                        </div> -->
                                                                         <div class="form-row">
                                                                             <div class="col-md-6 mb-3">
                                                                             <h6 class="text-muted">Type de cours</h6>

@@ -29,15 +29,20 @@
             <div class="display-table-cell">
                 <diV class="container ">
                     <div class="row justify-content-center">
-                        <div class="card">
+                        <div class="card col-lg-5">
                             <div class="card-body">
-                                <div class="text-center pt-3">
-                                    <a href="index.html">
+                                <div class=" alert text-center pt-3">
+                                    <a href="#">
                                         <img src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo" height="22" />
                                     </a>
                                 </div>
+                                    <?php if(validation_errors()) { ?>
+                                    <div class="alert alert-danger">
+                                        <?php echo validation_errors(); ?>
+                                    </div>
+                                    <?php } ?>
                                 <div class="px-3 pb-3">
-                                    <form class="form-horizontal m-t-20 mb-0" method="POST" action="">
+                                    <form class="form-horizontal " method="POST" action="">
                 
                                         <div class="form-group row">
                                             <div class="col-12">
@@ -51,27 +56,11 @@
                                             </div>
                                         </div>
                 
-                                        <div class="form-group row">
-                                            <div class="col-12">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">Remember me</label>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                 
                                         <div class="form-group text-right row m-t-20">
                                             <div class="col-12">
                                                 <button class="btn btn-primary btn-raised btn-block waves-effect waves-light" type="submit">connexion</button>
-                                            </div>
-                                        </div>
-                
-                                        <div class="form-group m-t-10 mb-0 row">
-                                            <div class="col-sm-7 m-t-20">
-                                                <a href="pages-recoverpw.html" class="text-muted"><i class="mdi mdi-lock"></i> Forgot your password ?</a>
-                                            </div>
-                                            <div class="col-sm-5 m-t-20">
-                                                <a href="pages-register.html" class="text-muted"><i class="mdi mdi-account-circle"></i> Create an account ?</a>
                                             </div>
                                         </div>
                                     </form>

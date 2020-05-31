@@ -34,7 +34,7 @@
                                 </a>
                             </li>
 
-                            <li class="has_sub">
+                            <!-- <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect">
                                     <i class="mdi mdi-calendar-plus"></i>
                                     <span> Emploi du temps </span>
@@ -45,14 +45,14 @@
                                 <ul class="list-unstyled">
                                     <li>
                                         <a href="<?php echo base_url(); ?>welcome/get_calendar">Ce mois</a>
-                                    </li>
+                                    </li> -->
                                     <!-- <li>
                                         <a href="#">La semaine prochaine</a>
                                     </li> -->
-                                </ul>
-                            </li>
+                             <!--    </ul>
+                            </li> -->
                             <li>
-                                <a href="<?php echo base_url(); ?>manager/booking" class="waves-effect">
+                                <a href="<?php echo base_url(); ?>assistant/get_all_salle" class="waves-effect">
                                     <i class="mdi mdi-calendar-check"></i>
                                     <span> Résevation de salle
                                     </span>

@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {	
 	public function __construct() {
 		parent::__construct();
-		check_installer();		
 		$this->load->model('Home_Model');	
  	}	
 	public function index(){
