@@ -40,7 +40,10 @@ class Horaire extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('horaire/Horaire_list', $data);
+        $home_template['page'] = "horaire/horaire_list";
+        $home_template['data'] = $data;
+        $this->load->view('home_template', $home_template);
+        /*$this->load->view('horaire/Horaire_list', $data);*/
     }
 
     public function read($id) 

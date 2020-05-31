@@ -40,7 +40,11 @@ class Evaluation extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('evaluation/Evaluation_list', $data);
+
+        $home_template['page'] = "evaluation/evaluation_list";
+        $home_template['data'] = $data;
+        $this->load->view('home_template', $home_template);
+        /*$this->load->view('evaluation/Evaluation_list', $data);*/
     }
 
     public function read($id) 

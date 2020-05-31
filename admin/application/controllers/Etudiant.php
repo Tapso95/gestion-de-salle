@@ -40,7 +40,11 @@ class Etudiant extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('etudiant/Etudiant_list', $data);
+
+        $home_template['page'] = "etudiant/etudiant_list";
+        $home_template['data'] = $data;
+        $this->load->view('home_template', $home_template);
+        /*$this->load->view('etudiant/Etudiant_list', $data);*/
     }
 
     public function read($id) 
