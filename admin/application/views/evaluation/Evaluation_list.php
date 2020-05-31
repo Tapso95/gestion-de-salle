@@ -1,16 +1,34 @@
-<!doctype html>
-<html>
-    <head>
-        <title>harviacode.com - codeigniter crud generator</title>
-        <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
-        <style>
-            body{
-                padding: 15px;
-            }
-        </style>
-    </head>
-    <body>
-        <h2 style="margin-top:0px">Evaluation List</h2>
+ <div class="content">
+                    <!-- Top Bar Start -->
+                    
+                    <!-- Top Bar End -->
+
+                    <div class="page-content-wrapper ">
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="page-title-box">
+                                        <div class="btn-group float-right">
+                                            <ol class="breadcrumb hide-phone p-0 m-0">
+                                                <li class="breadcrumb-item"><a href=".">Admin</a></li>
+                                                <li class="breadcrumb-item"><a href="#">Evaluation</a></li>
+                                               <!--  <li class="breadcrumb-item active">Form Validation</li> -->
+                                            </ol>
+                                        </div>
+                                        <h4 class="page-title">Evaluation</h4>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        <!-- end page title end breadcrumb -->
+                            <div class="row">
+                            <div class="col-md-12 col-xl-12">
+                                <div class="card m-b-30">
+                                    <div class="card-body">
+                                        <div class="general-label">
+
+        <h2 style="margin-top:0px">Liste des evaluations</h2>
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
                 <?php echo anchor(site_url('evaluation/create'),'Create', 'class="btn btn-primary"'); ?>
@@ -25,10 +43,10 @@
             <div class="col-md-3 text-right">
                 <form action="<?php echo site_url('evaluation/index'); ?>" class="form-inline" method="get">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
+                        <input type="text" class="form-control" name="q" value="<?php echo $data['q']; ?>">
                         <span class="input-group-btn">
                             <?php 
-                                if ($q <> '')
+                                if ($data['q'] <> '')
                                 {
                                     ?>
                                     <a href="<?php echo site_url('evaluation'); ?>" class="btn btn-default">Reset</a>
@@ -49,11 +67,11 @@
 		<th>NoteEvaluation</th>
 		<th>Action</th>
             </tr><?php
-            foreach ($evaluation_data as $evaluation)
+            foreach ($data['evaluation_data'] as $evaluation)
             {
                 ?>
                 <tr>
-			<td width="80px"><?php echo ++$start ?></td>
+			<td width="80px"><?php echo ++$data['start'] ?></td>
 			<td><?php echo $evaluation->idEtudiant ?></td>
 			<td><?php echo $evaluation->idCours ?></td>
 			<td><?php echo $evaluation->noteEvaluation ?></td>
@@ -73,11 +91,20 @@
         </table>
         <div class="row">
             <div class="col-md-6">
-                <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
+                <a href="#" class="btn btn-primary">Total Record : <?php echo $data['total_rows'] ?></a>
 	    </div>
             <div class="col-md-6 text-right">
-                <?php echo $pagination ?>
+                <?php echo $data['pagination'] ?>
             </div>
         </div>
-    </body>
-</html>
+   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div>
+                        </div><!-- container -->
+
+                    </div> <!-- Page content Wrapper -->
+
+                </div> <!-- content -->

@@ -40,7 +40,11 @@ class Salle extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('salle/Salle_list', $data);
+
+        $home_template['page'] = "salle/salle_list";
+        $home_template['data'] = $data;
+        $this->load->view('home_template', $home_template);
+        /*$this->load->view('salle/Salle_list', $data);*/
     }
 
     public function read($id) 

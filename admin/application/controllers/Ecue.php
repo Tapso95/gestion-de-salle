@@ -40,7 +40,11 @@ class Ecue extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('ecue/Ecue_list', $data);
+
+        $home_template['page'] = "ecue/ecue_list";
+        $home_template['data'] = $data;
+        $this->load->view('home_template', $home_template);
+        /*$this->load->view('ecue/Ecue_list', $data);*/
     }
 
     public function read($id) 

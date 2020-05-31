@@ -43,7 +43,7 @@
                             </li>
 
                             <li>
-                                <a href="#" class="waves-effect">
+                                <a href="ecue" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Ecue
                                     </span>
@@ -51,15 +51,22 @@
                             </li>
 
                             <li>
-                                <a href="#" class="waves-effect">
+                                <a href="enseignant" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Enseignant
                                     </span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="etudiant" class="waves-effect">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Etudiant
+                                    </span>
+                                </a>
+                            </li>
 
                             <li>
-                                <a href="#" class="waves-effect">
+                                <a href="evaluation" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Evaluation
                                     </span>
@@ -67,7 +74,7 @@
                             </li>
 
                             <li>
-                                <a href="#" class="waves-effect">
+                                <a href="examen" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Examen
                                     </span>
@@ -75,7 +82,7 @@
                             </li>
 
                             <li>
-                                <a href="#" class="waves-effect">
+                                <a href="grade" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Grade
                                     </span>
@@ -83,7 +90,7 @@
                             </li>
                             
                             <li>
-                                <a href="#" class="waves-effect">
+                                <a href="horaire" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Horaire
                                     </span>
@@ -91,7 +98,7 @@
                             </li>
                             
                             <li>
-                                <a href="#" class="waves-effect">
+                                <a href="niveau" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Niveau
                                     </span>
@@ -99,7 +106,7 @@
                             </li>
 
                             <li>
-                                <a href="#" class="waves-effect">
+                                <a href="poste" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Poste
                                     </span>
@@ -107,14 +114,14 @@
                             </li>
 
                             <li>
-                                <a href="#" class="waves-effect">
+                                <a href="salle" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Salle
                                     </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="waves-effect">
+                                <a href="surveillant" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Surveillant
                                     </span>
